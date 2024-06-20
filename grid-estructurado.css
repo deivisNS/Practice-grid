@@ -1,0 +1,56 @@
+html {
+	background: black;
+	font-size: 3.0em;
+}
+
+.content {
+	width: 95%;
+	margin: 5px auto;
+	background: white;
+	border: 3px solid rgba(0, 0, 0, .4);
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 100px 150px 150px 50px;
+	/*especificamos cuantas casillas va a ocupar cada area, haciendo uso del nomber de clase que se le dio*/
+	grid-template-areas: "header header header"
+						"section section aside"
+						"section section aside"
+						"footer footer footer";
+}
+
+.header {
+	text-align: center;
+	background: orange;
+	/*indicamos que area tomara este elemento*/
+	grid-area: header;
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: 1fr 2fr;
+}
+
+.section {
+	text-align: center;
+	background: white;
+	grid-area: section;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 2fr;
+	grid-template-rows: 140px 140px;
+}
+
+.aside {
+	text-align: center;
+	background: lightblue;
+	grid-area: aside;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 1fr;
+	grid-template-rows: 140px 140px;
+}
+
+.footer {
+	text-align: center;
+	background: brown;
+	grid-area: footer;
+}

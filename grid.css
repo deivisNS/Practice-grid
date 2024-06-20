@@ -1,0 +1,54 @@
+.box-1, .box-2, .box-3 {
+	display: grid;
+}
+
+.box-1 {
+	/* cada vez que se agrega una cantidad en px, se creara una 
+	columna con ese tamaño */
+	grid-template-columns: 200px 300px 100px 70px;
+	/* solo sirve para dar tamaño en forma vertical a toda la fila */
+	grid-template-rows: 100px 100px 50px;
+	/* agrega margin entre elementos */
+	grid-gap: 40px;
+}
+
+
+.box-2 {
+	/* los fr les da tamaño y a la vez logra ocupar el espacio pertinente
+	de cada uno y si se les da el mismo valor, todos se acoplaran con el 
+	mismo tamaño.
+
+	no funcionara en vertical, a menos que se le de un height al contenedor
+	padre */
+	grid-template-columns: 1fr 3fr 2fr;
+	grid-gap: 50px;
+}
+
+.box-3 {
+	/* minmax es para que esa columna tenga un maximo de ancho y un minimo
+	de ancho.
+
+	al achicar la pagina y los demas elementos no pueden achicarse mas, 
+	entonces este tendra que achicarse hasta que llegue al minimo */
+	grid-template-columns: minmax(150px, 300px) minmax(150px, 1fr);
+	/* el auto es para que el height del contenedor sea automatico por
+	si este tiene mucho contenido */
+	grid-template-rows: minmax(100px, auto);
+	grid-gap: 50px;
+}
+
+
+.box-1 .item {
+	/* con estas 2 propiedades puedes lograr mover algun elemento a otra
+	posicion */
+	grid-column: 3 / 4;
+	grid-row: 2 / 3;
+}
+
+.box-2 .item-2 {
+	/* tambien puedes lograr que un elemento ocupe mas casillas de las 
+	debidas y si le colocas un -1 en el ultimo valor, este estara tomando
+	toda la casilla entera sin importar cuantos elementos haya.
+	por ejemplo: 1 /-1 */
+	grid-column: 1 / 3;
+}

@@ -1,0 +1,24 @@
+
+@keyframes ojo {
+	0%{justify-self: start; align-self: center;}
+	10%{justify-self: center; align-self: start;}
+	20%{justify-self: end; align-self: center;}
+	30%{justify-self: center; align-self: end}
+	40%{justify-self: start; align-self: center;}
+	50%{justify-self: center; align-self: start;}
+	60%{justify-self: end; align-self: center;}
+	70%{justify-self: center; align-self: end}
+	80%{justify-self: center; align-self: center;}
+	90%{justify-self: center; align-self: center; background: red}
+	100%{justify-self: center; align-self: center; background: black;}
+}
+
+.box-1 .item, .box-1 .item-2, .box-1 .item-3 {
+	background: black;
+	color: white;
+	width: 50%;
+	justify-self: start;
+	align-self: center;
+	border-radius: 50px;
+	animation: 20s ojo infinite;
+}
