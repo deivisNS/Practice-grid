@@ -1,0 +1,42 @@
+body {
+	background: black;
+	font-size: 2.0em;
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+	color: white;
+}
+
+.box-2 {
+	width: 95%;
+	border: 3px solid rgba(0, 0, 0, .5);
+	margin: 30px auto;
+	background: white;
+	display: grid;
+	grid-gap: 20px;
+	/*auto-fill intenta dejar espacio sobrante para que quepa otro u otros elementos en el, y si se queda
+	sin espacio entonces va mandando a los elementos hacia la casilla de abajo*/
+	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.box-1 {
+	width: 95%;
+	border: 3px solid rgba(0, 0, 0, .5);
+	margin: 30px auto;
+	background: white;
+	display: grid;
+	grid-gap: 20px;
+	/*auto-fit ocupa todo el espacio sobrante repartiendoselo entre los elementos, y si hay un nuevo elemento y 
+	ya no puede colocar mas en esa casilla, entosces va a intentar mandar a los elementos hacia la casilla de 
+	abajo*/
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.box-2 div, .box-1 div {
+	background: red;
+	color: white;
+	border: 2px solid rgba(0, 0, 0, .5);
+	box-shadow: 7px 7px 7px black;
+}
